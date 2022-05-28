@@ -5,3 +5,14 @@ before_install:
   - source "$HOME/.sdkman/bin/sdkman-init.sh"
   - sdk install java 11.0.12-open
   - sdk use java 11.0.12-open
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU_TOKEN
+  app: "book-demo-store-rick"
+
+
+
+
+
