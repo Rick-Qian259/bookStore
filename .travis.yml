@@ -5,6 +5,7 @@ before_install:
   - source "$HOME/.sdkman/bin/sdkman-init.sh"
   - sdk install java 11.0.12-open
   - sdk use java 11.0.12-open
+  - gem install faraday -v 1.10.0
 
 deploy:
   provider: heroku
