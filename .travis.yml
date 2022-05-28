@@ -7,7 +7,7 @@ before_install:
   - sdk use java 11.0.12-open
 
 before_deploy:
-  - gem install faraday -v 1.10.0
+  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.10.0
 
 deploy:
   provider: heroku
