@@ -1,4 +1,4 @@
 language: java
 sudo: false
 jdk:
-  - oepnjdk8
+  - oepnjdk11
