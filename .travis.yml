@@ -13,6 +13,8 @@
 #  provider: heroku
 #  api_key: $HEROKU_API_KEY
 
+# heroku123
+# HEROKU_TOKEN
 
 language: java
 jdk:
