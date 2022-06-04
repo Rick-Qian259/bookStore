@@ -1,17 +1,30 @@
-language: java
-sudo: false
-before_install:
-  - curl -s "https://get.sdkman.io" | bash
-  - source "$HOME/.sdkman/bin/sdkman-init.sh"
-  - sdk install java 11.0.12-open
-  - sdk use java 11.0.12-open
+#language: java
+#sudo: false
+#before_install:
+#  - curl -s "https://get.sdkman.io" | bash
+#  - source "$HOME/.sdkman/bin/sdkman-init.sh"
+#  - sdk install java 11.0.12-open
+#  - sdk use java 11.0.12-open
+#
+#before_deploy:
+#  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.10.0
+#
+#deploy:
+#  provider: heroku
+#  api_key: $HEROKU_API_KEY
 
-before_deploy:
-  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.10.0
+
+language: java
+jdk:
+  - openjdk8
+
+script:
+  - ./gradlew check
 
 deploy:
   provider: heroku
-  api_key: $HEROKU_API_KEY
+  api_key: $HEROKU_TOKEN
+  app: "book-demo-store-rick"
 
 
 
